@@ -1,13 +1,13 @@
 import { Router } from 'express';
+import { Service } from 'typedi';
 import ProductController from '../controllers/ProductController';
 
+@Service()
 export default class ProductRoute {
   private router: Router;
-  private productController: ProductController;
 
-  constructor() {
+  constructor(private productController: ProductController) {
     this.router = Router();
-    this.productController = new ProductController();
     this.iniializeRouter();
   }
 

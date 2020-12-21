@@ -1,17 +1,20 @@
-import { Repository } from 'typeorm';
+import { InjectRepository } from 'typeorm-typedi-extensions';
 import { Service } from 'typedi';
 import Product from '../entity/Product';
+import ProductRepository from '../repositories/ProductRepository';
 
 @Service()
 export default class ProductService {
-  private productRepository: Repository<Product>;
-
-  constructor(productRepository: Repository<Product>) {
-    this.productRepository = productRepository;
-  }
+  constructor(
+    @InjectRepository() private productRepository: ProductRepository
+  ) {}
 
   public async create(product: Product): Promise<Product> {
-    const createdProduct = this.productRepository.save(product);
-    return createdProduct;
+    try {
+      const createdProduct = await this.productRepository.save(product);
+      return createdProduct;
+    } catch (e) {
+      throw e;
+    }
   }
 }

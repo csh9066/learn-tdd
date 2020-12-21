@@ -1,9 +1,9 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-class Product {
+export default class Product {
   @PrimaryGeneratedColumn()
-  id!: number;
+  id?: number;
 
   @Column()
   name!: string;
@@ -14,5 +14,3 @@ class Product {
   @Column({ nullable: true })
   price?: number;
 }
-
-export default Product;

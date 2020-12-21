@@ -9,4 +9,4 @@ express mvc패턴으로 테스트 코드를 작성해보자
 - mysql
 - jest
 - supertest
-- node-mock-http
+- typedi
