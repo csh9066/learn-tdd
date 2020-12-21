@@ -1,7 +1,7 @@
 {
   "name": "learn-tdd",
   "version": "1.0.0",
-  "description": "인프런 강의 따라배우는 tdd를 나만의 기술 스택으로 바꿔서 따라해보기",
+  "description": "tdd mvc express",
   "main": "server.js",
   "author": "senglo",
   "license": "MIT",
